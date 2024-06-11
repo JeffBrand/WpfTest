@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,9 @@ namespace TestWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        static extern bool SetWindowDisplayAffinity(IntPtr hwnd, uint affinity);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -24,7 +28,16 @@ namespace TestWpf
             this.PreviewKeyUp += Window_PreviewKeyUp;
             this.SizeChanged += MainWindow_SizeChanged;
            
-            this.Loaded += (s,e) => { };
+            this.Loaded += (s,e) => {
+                // Get the window handle
+                var hwnd = new System.Windows.Interop.WindowInteropHelper(this).Handle;
+
+                // Call the function with the desired affinity
+                // For example, to disable all display affinity, use 0
+                uint affinity = 7;
+                SetWindowDisplayAffinity(hwnd, affinity);
+
+            };
 
         }
 
