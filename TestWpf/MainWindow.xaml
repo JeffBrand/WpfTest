@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Background="#FFBFFFC1">
     <Grid>
-        <TextBlock Text="Bang" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Content="Bang" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Window>

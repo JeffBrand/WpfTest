@@ -43,7 +43,7 @@ namespace TestWpf
 
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-        
+           
         }
 
         private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -60,6 +60,11 @@ namespace TestWpf
                 this.WindowState = WindowState.Maximized;
                 e.Handled = true;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
