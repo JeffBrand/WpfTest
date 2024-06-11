@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Topmost="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Background="#FFBFFFC1">
     <Grid>
-        <Button Content="Bang" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Enter Text:"/>
+            <TextBox Width="200" />
+            <Button Content="Close"  Click="Button_Click" Margin="0,10"/>
+        </StackPanel>
     </Grid>
 </Window>
