@@ -46,12 +46,12 @@ namespace TestWpf
         
         }
 
-        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void Window_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
            
         }
 
-        private void Window_PreviewKeyUp(object sender, KeyEventArgs e)
+        private void Window_PreviewKeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == Key.LWin || e.Key == Key.RWin)
             {
